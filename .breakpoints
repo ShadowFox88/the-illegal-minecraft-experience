@@ -1,0 +1,20 @@
+{
+  "files": {
+    "registry/item.py": [
+      {
+        "id": "2bacb459-2ffd-4d2f-934a-72f3dc374871",
+        "line": 38,
+        "version": 825,
+        "index": 930
+      }
+    ],
+    "registry/itemdesc.text": [
+      {
+        "id": "683b0232-483f-41d1-b91b-5341b655790d",
+        "line": 3,
+        "version": 189,
+        "index": 83
+      }
+    ]
+  }
+}
