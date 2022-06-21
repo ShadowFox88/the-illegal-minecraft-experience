@@ -1,4 +1,4 @@
-import registry
+import registry.registry as registry
 
 class Player:
     def __init__(self):
@@ -58,7 +58,7 @@ class Player:
     def craft_item(self, recipe_id : str):
         recipe = registry.CRAFTING_REGISTRY.view_entry(recipe_id)
 
-        if recipe >= 0:
+        if recipe != -2:
            result = recipe.craft(self)
         
         if result == "Not enough items":

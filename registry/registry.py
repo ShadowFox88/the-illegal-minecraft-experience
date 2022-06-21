@@ -18,10 +18,12 @@ class Registry:
 
         if not self.registry.__contains__(object):
             self.registry[object.item_id] = object
+
+            # print("DEBUG: ", object.item_id)
         else:
             return -2
 
-    def delete_registry(self, object):
+    def delete_registry_e(self, object):
         if isinstance(object, self.entry_type):
             return -1
 
@@ -35,7 +37,7 @@ class Registry:
             self.register_entry(object)
 
     def view_entry(self, object_id : str):
-        if self.registry.__contains__(object):
+        if self.registry.__contains__(object_id):
             return self.registry[object_id]
         else:
             return -2

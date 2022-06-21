@@ -20,7 +20,11 @@ class Recipe:
         self.result_item = ITEM_REGISTRY.view_entry(self.result_id[0])
 
         for obj_id, obj_count in self.recipe_list:
-            if ITEM_REGISTRY.view_entry(obj_id) == -2:
+            view_status = ITEM_REGISTRY.view_entry(obj_id)
+
+            # print("DEBUG:", view_status)
+            
+            if view_status == -2:
                 print("Invalid crafting recipe(item in recipe doesn't exist): ", obj_id)
 
                 exit(-2)
@@ -61,5 +65,7 @@ class Recipe:
 
 def register():
     CRAFTING_REGISTRY.register_entries(
-        Recipe("planks1", ("oak_planks", 4), ("oak_wood", 1))
+        Recipe("planks1", ("oak_planks", 4),("oak_wood", 1)),
+        Recipe("stick1", ("stick", 4), ("oak_planks", 1)),
+        Recipe("pickaxe1", ("wooden_pickaxe", 1), ("stick", 2), ("oak_planks", 3))
     )
